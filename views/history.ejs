@@ -1,0 +1,60 @@
+<%-include("partials/header")%>
+
+    <form action="/history" method="post">
+        <div id="headlines" class="input-group mb-3">
+            <input
+                type="text"
+                class="form-control"
+                name="history"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default"
+                placeholder="what are you searching?">
+            <button class="btn btn-light btn-outline-secondary" type="submit">Go</button>
+
+        </div>
+    </form>
+    <section class="history">
+    <% if (historyNews && historyNews.length > 0) { %>
+        <% historyNews.forEach(function(news){ %>
+            <h6><%=news.newsTitle%></h6>
+            <p>
+                Description:
+                <%=news.newsDescri%></p>
+            <p>
+                URL:
+                <a href="<%=news.newsTopicUrl%>">click to read the news</a>
+            </p>
+            <p>Image URL:
+                <a href="<%=news.newsImageUrl%>">Image</a>
+            </p>
+            <p>
+                Author:
+                <%=news.newsAuthor%></p>
+            <p>
+                Published date:
+                <%=news.newsPublishedDate%></p>
+            <form action="/deleteNews" method="post">
+                <button
+                    type="submit"
+                    class="btn btn-light btn-outline-secondary"
+                    style="padding-right: 5%;"
+                    value="<%=news.newsTitle%>"
+                    name="deleteNews">delete</button>
+            </form>
+            <hr>
+
+            <%})%>
+            <% } else { %>
+                <p>Sorry we coudn't find it.</p>
+            <%}%>
+</section>
+            <section class="filtHome" style="padding-right: 5%;">
+                <form >
+                    <a
+                        class="btn btn-light btn-outline-secondary "
+                        href="/everything"
+                        role="button">Back</a>
+                </form>
+            </section>
+
+            <%-include("partials/footer")%>

@@ -1,0 +1,30 @@
+<%-include("partials/header")-%>
+    <div
+        id="readMorePart"
+       > 
+        <% if (clicks && clicks.Title) { %>
+
+            <h3 ><%=clicks.Title%></h3>
+            <p ><%=clicks.descri%></p>
+            <img
+                class="img-fluid img-thumbnail rounded"
+                src="<%=clicks.imageUrl%>"
+                alt="image"
+                style="height: 75%; width: 75%;">
+            <p>
+                <i><%=clicks.author%></i>
+            </p>
+            <p>
+                <i>link:<%=clicks.TopicUrl%></i>
+            </p>
+            <p>
+                <strong>
+                    <i><%=clicks.catagory%></i>
+                </strong>
+            </p>
+        <% } else { %>
+            <p>No more information for the topic.</p>
+        <% } %>
+    </div>
+
+    <%-include("partials/footer")-%>

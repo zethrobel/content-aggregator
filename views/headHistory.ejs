@@ -1,0 +1,59 @@
+<%-include("partials/header")%>
+
+    <form action="/headHistory" method="post">
+        <div id="headlines" class="input-group mb-3">
+            <input
+                type="text"
+                class="form-control"
+                name="headHistory"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default"
+                placeholder="what are you searching?">
+            <button class="btn btn-light btn-outline-secondary" type="submit">Go</button>
+
+        </div>
+    </form>
+   <section class="history">
+    <% if (histories && histories.length > 0) { %>
+
+        <% histories.forEach(function(history){ %>
+           
+            <h6><%=history.Title%></h6>
+            <p>
+                Description:
+                <%=history.descri%></p>
+            <p>
+                URL:
+                <a href="<%=history.TopicUrl%>">click to read the news</a>
+            </p>
+            <p>Image URL:
+                <a href="<%=history.imageUrl%>">Image</a>
+            </p>
+            <p>
+                Author:
+                <%=history.author%></p>
+            <form action="/deleteHead" method="post">
+                <button
+                    type="submit"
+                    class="btn btn-light btn-outline-secondary"
+                    style="padding-right: 5%;"
+                    value="<%=history.Title%>"
+                    name="deleteHead">delete</button>
+            </form>
+            <hr>
+
+            <%})%>
+
+            <% } else { %>
+                <p>Sorry we coudn't find it.</p>
+
+            <%}%>
+            </section>
+
+            <section class="filtHome" style="padding-right: 5%;">
+                <form >
+                    <a class="btn btn-light btn-outline-secondary " href="/headlines" role="button">Back</a>
+                </form>
+            </section>
+
+            <%-include("partials/footer")%>

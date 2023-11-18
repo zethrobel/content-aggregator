@@ -1,0 +1,74 @@
+body{
+    background-color: rgb(19, 19, 19);
+   
+}
+#userChoice{
+     
+   text-align: center;
+    font-family: cursive;
+    padding-bottom: 5%;
+
+}
+#headlines{
+   padding: 3% 7%; 
+   height: 50px;
+}
+#readMorePart{
+   background-color: rgb(19, 19, 19);
+   text-align: center;
+   padding: 4% 5%;
+   line-height: 2;
+}
+
+#displayPart{
+    padding: 3% 3%;
+    color: rgb(149, 132, 7);
+}
+
+.filtHome{
+    float: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    
+    
+    margin-right: 0px;
+    overflow:auto;
+    
+    
+}
+.filtHome form{
+    padding-bottom:5px;
+    
+}
+.history{
+    padding: 2%;
+}
+hr{
+    color: rgb(149, 132, 7);
+}
+h1{
+    color: rgb(149, 132, 7);
+     text-align: center;
+    line-height: 4.5;
+    padding: 5% 15% 0;
+    font-family: cursive;
+
+}
+h2{
+    color: rgb(149, 132, 7);
+    padding:1% 4%; height: 100px; text-align: center;
+    line-height: 4.5;
+    padding-left: 4%;
+    padding-bottom: 0.3%;
+    font-family: cursive;
+}
+
+li{
+       
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.5;
+}
+h6,h3, p {
+    color: rgb(149, 132, 7);
+}
+

@@ -1,0 +1,46 @@
+<%- include("partials/header") %>
+
+<form action = "/headlines" method = "post" > 
+    <div id="headlines" class="input-group mb-3">
+        <input
+            type="text"
+            class="form-control"
+            name="headlineName"
+            aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default"
+            placeholder="Possible options: general, sport, entertainment, health, business, science, technology"
+        >
+        <button class="btn btn-light btn-outline-secondary" type="submit">Search</button>
+    </div>
+</form>
+<h2 >Top Headlines</h2>
+ <div id="displayPart">
+    <% if (articles && articles.length > 0) { %>
+        <% articles.forEach(function(article) { %>
+            <h5><%= article.title %></h5>
+            <p>
+                <% if (article.description) { %>
+                    <%= article.description.substring(0, 100) + "..." %>
+                <% } %>
+
+                <a href="/postHeadlines/<%=article.title%>">Read More</a>
+            </p>
+
+            <% }) %>
+            <% } else { %>
+                <p>No articles found.</p>
+            <% } %>
+    
+    
+ <section class="filtHome">
+    <form action="/headHistory" method="get">
+        <button type="submit" class="btn btn-light btn-outline-secondary">History</button>
+    </form>
+    <form >
+        <a class="btn btn-light btn-outline-secondary " href="/" role="button">Home</a>
+    </form>
+
+</section>     
+
+        </div>
+<%- include("partials/footer") %>

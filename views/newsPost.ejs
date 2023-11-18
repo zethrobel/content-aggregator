@@ -1,0 +1,35 @@
+<%-include("partials/header")%>
+
+    <div
+        id="readMorePart"
+        >
+        <% if (clickedNews && clickedNews.newsTitle) { %>
+
+            <h3><%=clickedNews.newsTitle%></h3>
+            <p ><%=clickedNews.newsDescri%></p>
+            <img
+                class="img-fluid img-thumbnail rounded"
+                src="<%=clickedNews.newsImageUrl%>"
+                alt="image"
+                style="height: 75%; width: 75%;">
+            <p>
+                <i><%=clickedNews.newsAuthor%></i>
+            </p>
+            <p>
+                <i>link:
+                    <%=clickedNews.newsTopicUrl%></i>
+            </p>
+            <p>
+                <i><%=clickedNews.newsPublishedDate%></i>
+            </p>
+            <p>
+                <strong>
+                    <i><%=clickedNews.searchedContent%></i>
+                </strong>
+            </p>
+        <% } else { %>
+            <p>No more information for the topic.</p>
+        <% } %>
+    </div>
+
+    <%-include("partials/footer")%>
