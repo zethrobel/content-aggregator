@@ -17,7 +17,7 @@ app
 
 mongoose
     .set("strictQuery", false)
-    .connect("process.env.MONGO_KEY")
+    .connect(process.env.MONGO_KEY)
     .then(console.log("Database connected"))
     .catch(function (error) {
             console.log(error);
